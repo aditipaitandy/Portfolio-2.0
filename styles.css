@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap');
+
+/* CSS Variables for theming */
+:root {
+    --main-bg-color: #ffffff; 
+    --primary-color: #ffeb3b; /* Light yellow */
+    --secondary-color: #c8e6c9; /* Light green */
+    --accent-color: #e1bee7; /* Lavender */
+    --text-color: #333; 
+    --hover-bg-color: #f8bbd0; /* Light pink */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: "Playfair", serif;
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    line-height: 1.6;
+    font-size: 1.8rem; 
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #6a5acd; 
+    color: white;
+    padding: 10px 20px;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    transition: background-color 0.3s; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f0e68c; 
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth; 
+}
+
+/* Hero section styling */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(14, 13, 13);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    overflow: hidden;
+    perspective: 1000px; 
+    margin-top: 60px; 
+}
+
+/* Hero content styling */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    background: linear-gradient(to right, #7aaeca, #5d67c5);
+    color: #ffffff;
+    transition: background 0.5s;
+    border-radius:15px;
+}
+.hero-content:hover {
+    background: linear-gradient(to right, #5d67c5, #7aaeca);
+}
+
+.text-content {
+    text-align: left;
+    margin-right: 40px;
+    transform: translateZ(50px); 
+}
+
+.text-content h1 {
+    margin-bottom: 10px;
+    font-family: "Playfair", serif;
+    text-shadow: 2px 2px 4px var(--shadow-color); 
+}
+
+.text-content p {
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.hero-btns .btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 12px 35px;
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px var(--shadow-color); 
+    transition: all 0.3s ease; 
+}
+
+.hero-btns .btn:hover {
+    background: var(--hover-bg-color);
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Profile image styling */
+.profile {
+    flex-shrink: 0;
+    transform: translateZ(-30px); 
+}
+
+.profile img {
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 20px var(--shadow-color); 
+    transition: transform 0.3s ease; 
+}
+
+.profile img:hover {
+    transform: scale(1.1); 
+}
+
+/* Section Titles */
+section h2 {
+    margin: 20px 0;
+    font-size: 1.5em; 
+    text-align: center;
+    color: purple;
+    text-shadow: 1px 1px 3px var(--shadow-color); 
+}
+
+/* Project grid styling (adjusted for profile cards) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 20px; 
+    padding: 40px; 
+}
+
+/* Project card styling (profile cards) */
+.project-card {
+    background: linear-gradient(135deg, var(--main-bg-color), var(--secondary-color)); 
+    border-radius: 10px;
+    width: 100%; 
+    max-width: 400px; 
+    padding: 20px;
+    box-shadow: 0 2px 10px var(--shadow-color); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    position: relative; 
+}
+
+/* Hover effect for profile cards */
+.project-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* Profile card content styling */
+.profile-card-content {
+    color: white; 
+}
+
+/* Profile name styling */
+.profile-card-content h2 {
+    margin-bottom: 5px; 
+}
+
+/* Profile description styling */
+.profile-card-content p {
+    font-size: 0.9em; 
+    opacity: 0.9; 
+}
+
+/* Additional styling for responsive design */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .project-card {
+        margin: 0 auto; 
+        max-width: 90%; 
+    }
+}
+
+/* Contact section styling */
+#contact {
+    padding: 40px 20px;
+}
+
+/* Footer styling */
+footer {
+    background:lightgreen;
+    color: rgb(10, 10, 10);
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: rgb(14, 13, 13);
+    transition: color 0.3s;
+    font-size:50px;
+}
+
+.social-icons a:hover {
+    color:white; 
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill i {
+    font-size: 48px; 
+    color: #333;
+    margin-bottom: 10px;
+}
+#qualifications ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+/* Hover effects for buttons and links */
+a:hover {
+    color: #009688;
+    transition: color 0.3s;
+}
+
+/* Skill progress bars */
+.skill-bar {
+    background: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0.5em 0;
+}
+.skill-level {
+    display: inline-block;
+    height: 10px;
+    background-color: #4caf50;
+    width: 0;
+    animation: loadSkill 1.5s forwards;
+}
+@keyframes loadSkill {
+    to { width: 80%; }
+}
