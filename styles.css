@@ -88,9 +88,6 @@ nav {
     }
 }
 @media (max-width: 500px) {
-    body{
-        font-size:0.5rem;
-    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -246,8 +243,8 @@ nav {
 }
 @media (max-width: 500px) {
     .profile img {
-        height: 150px;
-        width: 150px;
+        height: 180px;
+        width: 170px;
         border-radius: 50%; 
         object-fit: cover;
         margin-left: 20px;
